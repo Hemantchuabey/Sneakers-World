@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   nextSlide,
   prevSlide,
@@ -9,6 +9,18 @@ import { sliderData } from "../../assets/data/dummyData";
 const Slider = () => {
   const slideIndex = useSelector((state) => state.slide.value);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+      const intervalAmt = setInterval(() => {
+        console.log(slideIndex)
+        dispatch(nextSlide(slideIndex + 1))
+        }, 3000); 
+
+      return () => {
+        // Clear the timer interval
+        clearInterval(intervalAmt);
+      };
+  }, [slideIndex]);
 
   return (
     <div className="relative pb-4">
