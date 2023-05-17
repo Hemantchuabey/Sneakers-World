@@ -10,17 +10,17 @@ const Slider = () => {
   const slideIndex = useSelector((state) => state.slide.value);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-      const intervalAmt = setInterval(() => {
-        console.log(slideIndex)
-        dispatch(nextSlide(slideIndex + 1))
-        }, 3000); 
+  // useEffect(() => {
+  //     const intervalAmt = setInterval(() => {
+  //       console.log(slideIndex)
+  //       dispatch(nextSlide(slideIndex + 1))
+  //       }, 3000); 
 
-      return () => {
-        // Clear the timer interval
-        clearInterval(intervalAmt);
-      };
-  }, [slideIndex]);
+  //     return () => {
+  //       // Clear the timer interval
+  //       clearInterval(intervalAmt);
+  //     };
+  // }, [slideIndex]);
 
   return (
     <div className="relative pb-4">
@@ -60,7 +60,7 @@ const Slider = () => {
               <div
                 className={
                   index === slideIndex
-                    ? "bg-green-300 rounded-full p-4 cursor-pointer"
+                    ? "bg-gray-700 rounded-full p-4 cursor-pointer"
                     : "bg-gray-300 rounded-full p-4 cursor-pointer"
                 }
                 onClick={() => dispatch(dotSlide(index))}
