@@ -1,16 +1,23 @@
 import { Button } from '@material-tailwind/react'
 import React from 'react'
 import nike3 from '../../assets/image/nike3.jpg'
-
+import { filteredProducts } from '../../features/Slices/productSlice'
+import { useSelector,useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 const Buttons = () => {
     const buttons = ['Nike','Adidas','Puma','Reebok','Jordan', ]
+    const dispatch = useDispatch()
   return (
     <div>
         <div className='flex items-center justify-center py-8'>
             {buttons.map((button,index) => {
                 return (
                     <div key={index} className='mr-8'>
-                            <Button color="gray" size='md' variant="outlined" ripple={true} className='hover : bg-gray-700 hover:scale-105 duration-300 ease-in-out'>{button}</Button>
+                        <Link to={"/filteredProduct/" + button}>
+                            <Button color="gray" size='md' variant="outlined" ripple={true} className='hover : bg-gray-700 hover:scale-105 duration-300 ease-in-out' 
+                            onClick={() => dispatch(filteredProducts(button))}
+                            >{button}</Button>
+                            </Link>
                     </div>
                 )
             })}
