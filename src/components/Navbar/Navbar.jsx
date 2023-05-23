@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/image/logo.png";
+import Cart from "../Cart/Cart";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const [open,setOpen] = useState(false)
+  const totalAmount = useSelector(state => state.cart.totalAmount)
+  const handleOpen = () => {
+    setOpen(true)
+  }
   return (
     <>
       <div className="bg-black p-4 w-full flex justify-around items-center">
@@ -34,8 +41,9 @@ const Navbar = () => {
               WishList
             </p>
           </div>
-          <div className="flex flex-row items-center cursor-pointer ml-4">
-            <svg
+          <div className="flex flex-row items-center cursor-pointer ml-4" onClick={handleOpen}>
+            {totalAmount> 0  ? <span className="rounded-full bg-gray-400 font-inter px-2 text-sm mr-1">{totalAmount}</span> : (
+              <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -49,9 +57,14 @@ const Navbar = () => {
                 d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
               />
             </svg>
+            )}
+            
             <p className="text-white font-inter font-medium tracking-normal leading-none">
               ShoppingCart
             </p>
+            <div>
+              {open &&  <Cart openModel={open} setOpen={setOpen}></Cart>}
+            </div>
           </div>
         </div>
       </div>
