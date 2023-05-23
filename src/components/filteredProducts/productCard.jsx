@@ -18,7 +18,7 @@ const ProductCard = ({ id, name, text, img, price, colors }) => {
   const { type } = useParams();
 
   return (
-    <Link to={`/filteredProduct/${type}/`+ id}>
+    <Link to={`/filteredProduct/${type}/` + id}>
       <Card
         className="max-w-[18rem] overflow-hidden hover:scale-105 duration-300 ease-in-out"
         onClick={() => dispatch(singleProduct(id))}
@@ -45,9 +45,7 @@ const ProductCard = ({ id, name, text, img, price, colors }) => {
         </CardBody>
         <CardFooter divider className="flex items-center justify-between">
           <div className="grid grid-cols-2 items-center -space-x-3 gap-4">
-            <Typography  className="font-immer font-bold">
-              {price}Rs.
-            </Typography>
+            <Typography className="font-immer font-bold">{price}Rs.</Typography>
             <Typography className="font-normal ml-4">
               {colors.map((color, index) => {
                 return (

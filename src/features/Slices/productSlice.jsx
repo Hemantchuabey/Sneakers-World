@@ -26,12 +26,12 @@ export const productSlice = createSlice({
     singleProduct(state, action) {
       try {
         const oneProduct = storeData.filter(
-          (product) => (product.id === action.payload)
+          (product) => product.id === action.payload
         );
         state.singleProduct = oneProduct;
         const saveState = JSON.stringify(oneProduct);
-        sessionStorage.setItem("oneProduct",saveState);
-        console.log("oneProduct",oneProduct)
+        sessionStorage.setItem("oneProduct", saveState);
+        console.log("oneProduct", oneProduct);
       } catch (err) {
         console.log(err);
       }

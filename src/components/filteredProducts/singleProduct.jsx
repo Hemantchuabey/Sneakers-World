@@ -1,13 +1,16 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Tooltip, Button } from "@material-tailwind/react";
+import { addToCart } from "../../features/Slices/cartSlice";
+
 
 const SingleProduct = () => {
   const products = useSelector((state) => state.product.singleProduct);
   const productSize = products[0].size ? products[0].size : "";
   const productColor = products[0].color;
   const { id } = useParams();
+  const dispatch = useDispatch()
   const [size, setSize] = useState(productSize[0]);
   const [colors, setColor] = useState(productColor[0]);
   console.log("size", size);
@@ -62,33 +65,49 @@ const SingleProduct = () => {
                       </select>
                     </div>
                     <div>
+                      <div className="pb-8">
+                        <label
+                          htmlFor="color"
+                          className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                        >
+                          Colors
+                        </label>
+                        <select
+                          name="color"
+                          id="color"
+                          value={colors}
+                          onChange={(e) => setColor(e.target.value)}
+                          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        >
+                          {item.color.map((color, index) => {
+                            return (
+                              <option key={index} value={color}>
+                                {color}
+                              </option>
+                            );
+                          })}
+                        </select>
+                      </div>
+                      <Tooltip content="Add to cart" placement="bottom">
+                        <Button
+                          color="gray"
+                          size="lg"
+                          variant="outlined"
+                          ripple={true}
+                          onClick={() => dispatch(addToCart({
+                            id : item.id,
+                            name :item.name,
+                            size : size,
+                            color : colors,
+                            price : item.price,
+                            amount : 1,
+                            totalPrice : item.price
 
-                    <div className="pb-8">
-                      <label
-                        htmlFor="color"
-                        className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                      >
-                        Colors
-                      </label>
-                      <select
-                        name="color"
-                        id="color"  
-                        value={colors}
-                        onChange={e => setColor(e.target.value)}
-                        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      >
-                        {item.color.map((color, index) => {
-                          return (
-                            <option key={index} value={color}>
-                             {color} 
-                            </option>
-                          );
-                        })}
-                      </select>
-                    </div>
-<Tooltip content="Add to cart" placement="bottom">
-  <Button color="gray" size="lg" variant="outlined" ripple={true}>Add to Cart</Button>
-</Tooltip>
+                          }))}
+                        >
+                          Add to Cart
+                        </Button>
+                      </Tooltip>
                     </div>
                   </div>
                 </div>
