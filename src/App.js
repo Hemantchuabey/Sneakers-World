@@ -12,8 +12,8 @@ function App() {
   const totalPrice = useSelector((state) => state.cart.totalPrice);
 
   console.log("cart", cart);
-  console.log("totalAmount", totalAmount);
-  console.log("totalPrice", totalPrice);
+  // console.log("totalAmount", totalAmount);
+  // console.log("totalPrice", totalPrice);
   return (
     <div className="App">
       <BrowserRouter>

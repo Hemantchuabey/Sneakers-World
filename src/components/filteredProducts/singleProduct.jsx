@@ -13,8 +13,8 @@ const SingleProduct = () => {
   const dispatch = useDispatch()
   const [size, setSize] = useState(productSize[0]);
   const [colors, setColor] = useState(productColor[0]);
-  console.log("size", size);
-  console.log("color", colors);
+  // console.log("size", size);
+  // console.log("color", colors);
   return (
     <div className="justify-center my-12">
       {products
@@ -97,6 +97,8 @@ const SingleProduct = () => {
                           onClick={() => dispatch(addToCart({
                             id : item.id,
                             name :item.name,
+                            img : item.img,
+                            text:item.text,
                             size : size,
                             color : colors,
                             price : item.price,
