@@ -26,7 +26,7 @@ const ProductSectionItem = ({
   const defaultColor = color[0];
   return (
     <div>
-      <Card className="w-96 h-[620px]">
+      <Card className="w-96 h-[620px] hover:scale-105 duration-300 ease-in-out cursor-pointer">
         <CardHeader floated={false} className="h-min object-cover">
           <img src={img} alt={name} className="object-cover"/>
         </CardHeader>
