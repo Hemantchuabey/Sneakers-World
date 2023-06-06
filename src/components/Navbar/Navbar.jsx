@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import logo from "../../assets/image/logo.png";
 import Cart from "../Cart/Cart";
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { Avatar,Tooltip,Button } from "@material-tailwind/react";
+import {logout} from '../../features/Slices/authSlice'
 const Navbar = () => {
   const [open,setOpen] = useState(false)
   const totalAmount = useSelector(state => state.cart.totalAmount)
+  const user = useSelector((state) => state.login)
+  const {name,image} = user
+  const dispatch = useDispatch()
   const handleOpen = () => {
     setOpen(true)
   }
+  console.log("name inside navbar" , user)
   return (
     <>
       <div className="bg-black p-4 w-full flex justify-around items-center">
@@ -19,7 +24,7 @@ const Navbar = () => {
                 Welcome to Sneaker-World
             </h3> */}
         <div className="flex flex-row items-center ml-8">
-          <button className="text-white font-inter text-base font-medium tracking-normal leading-none text-center mr-6">
+          <button className="text-white font-inter text-base font-medium tracking-normal leading-none text-center mr-6" onClick={() => dispatch(logout(user.user))}> 
             Logout
           </button>
           <div className="flex flex-row items-center ">
@@ -65,6 +70,16 @@ const Navbar = () => {
             <div>
               {open &&  <Cart openModel={open} setOpen={setOpen}></Cart>}
             </div>
+          </div>
+          <div className="flex flex-row items-center cursor-pointer pl-4  ">
+              {image && (<Avatar src={image} alt="avatar" size="sm" className="mr-2"></Avatar>)}
+              <div onClick={() => dispatch(logout)}>
+                <Tooltip content="Sign Out" placement="bottom" >
+<p className="font-inter text-sm font-medium tracking-normal leading-none ">
+              {/* Hi, {name.charAt("0").toUpperCase() + name.slice(1)} */}
+</p>
+</Tooltip>
+              </div>
           </div>
         </div>
       </div>
