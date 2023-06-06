@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import {
@@ -11,7 +11,7 @@ import {
 import ProductCard from "./productCard";
 const FilteredProducts = () => {
   const products = useSelector((state) => state.product.filteredProducts);
-  console.log("products", products);
+  // console.log("products", products);
   const { type } = useParams();
   const genderButton = ["Male", "Female"];
   const colorButton = ["red","gray","green","yellow","pink","black","blue","brown"]
@@ -54,7 +54,7 @@ const FilteredProducts = () => {
                 size="lg"
                 variant="outlined"
                 ripple={true}
-                className="text-black m-2 hover:bg-gray-400 duration-300 ease-in-out ">Select Color </Button>
+                className="text-black m-2 hover:bg-gray-400 duration-300 ease-in-out ">Select Color</Button>
       </MenuHandler>
       <MenuList>{
         colorButton.map((item,index) => (
