@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Navigate, useParams,Link } from "react-router-dom";
 import {
   Menu,
   MenuHandler,
@@ -14,7 +14,8 @@ import {
   filteredProducts,
   singleProduct,
   filterGender,
-  sortByPrice,
+  sortByHighPrice,
+  sortByLowPrice,
   filterByColor,
   filterBySize,
 } from "../../features/Slices/productSlice";
@@ -41,9 +42,10 @@ const FilteredProducts = () => {
     <div>
       <div className="pt-16">
         <div className="pl-14">
+       <Link to="/"> 
           <h1 className="text-4xl font-inner text-gray-600 tracking-normal leading-none">
             {type}
-          </h1>
+          </h1></Link>
           <div className="flex items-center justify-between py-8">
             <div className="flex items-center ">
               {genderButton.map((item, index) => (
@@ -66,9 +68,19 @@ const FilteredProducts = () => {
                 variant="outlined"
                 ripple={true}
                 className="text-black m-2 hover:bg-gray-400 duration-300 ease-in-out "
-                onClick={() => dispatch(sortByPrice())}
+                onClick={() => dispatch(sortByHighPrice())}
               >
                 High Price
+              </Button>
+              <Button
+                color="gray"
+                size="lg"
+                variant="outlined"
+                ripple={true}
+                className="text-black m-2 hover:bg-gray-400 duration-300 ease-in-out "
+                onClick={() => dispatch(sortByLowPrice())}
+              >
+                Low Price
               </Button>
               <Menu>
                 <MenuHandler>

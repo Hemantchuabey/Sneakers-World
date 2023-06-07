@@ -59,10 +59,34 @@ export const productSlice = createSlice({
         return err;
       }
     },
-    sortByPrice(state, action) {
+    sortByHighPrice(state, action) {
       try {
         const price = state.filteredProducts.sort((a, b) =>
           a.price > b.price ? -1 : 1
+        );
+        console.log('Price-->',price)
+        state.filteredProducts = price;
+        let count = price.length;
+        if (count > 1) {
+          const noError = false;
+          state.error = noError;
+          if (!noError) {
+            state.filteredProducts = price;
+        //     const saveState = JSON.stringify(price);
+        //     sessionStorage.setItem("filteredItem", saveState);
+          } else {
+            state.error = true;
+            state.filteredProducts = [];
+          }
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    },
+    sortByLowPrice(state, action) {
+      try {
+        const price = state.filteredProducts.sort((a, b) =>
+          a.price < b.price ? -1 : 1
         );
         console.log('Price-->',price)
         state.filteredProducts = price;
@@ -130,7 +154,8 @@ export const {
   filteredProducts,
   singleProduct,
   filterGender,
-  sortByPrice,
+  sortByHighPrice,
+  sortByLowPrice,
   filterByColor,
   filterBySize,
 } = productSlice.actions;
