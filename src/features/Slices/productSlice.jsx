@@ -18,7 +18,7 @@ export const productSlice = createSlice({
         );
         console.log("filter", filter);
         state.filteredProducts = filter;
-        state.error = false
+        state.error = false;
         const saveState = JSON.stringify(filter);
         sessionStorage.setItem("filteredData", saveState);
       } catch (err) {
@@ -45,12 +45,12 @@ export const productSlice = createSlice({
         );
         state.error = false;
         state.filteredProducts = gender;
-        console.log("gender" , gender,state.filteredProducts)
+        console.log("gender", gender, state.filteredProducts);
         const oneGenderType = gender.length > 0;
         if (oneGenderType) {
           state.error = false;
-        //   const saveState = JSON.stringify(gender);
-        //   sessionStorage.setItem("filteredData", saveState);
+          //   const saveState = JSON.stringify(gender);
+          //   sessionStorage.setItem("filteredData", saveState);
         } else {
           state.error = true;
           state.filteredProducts = [];
@@ -64,7 +64,7 @@ export const productSlice = createSlice({
         const price = state.filteredProducts.sort((a, b) =>
           a.price > b.price ? -1 : 1
         );
-        console.log('Price-->',price)
+        console.log("Price-->", price);
         state.filteredProducts = price;
         let count = price.length;
         if (count > 1) {
@@ -72,8 +72,8 @@ export const productSlice = createSlice({
           state.error = noError;
           if (!noError) {
             state.filteredProducts = price;
-        //     const saveState = JSON.stringify(price);
-        //     sessionStorage.setItem("filteredItem", saveState);
+            //     const saveState = JSON.stringify(price);
+            //     sessionStorage.setItem("filteredItem", saveState);
           } else {
             state.error = true;
             state.filteredProducts = [];
@@ -88,7 +88,7 @@ export const productSlice = createSlice({
         const price = state.filteredProducts.sort((a, b) =>
           a.price < b.price ? -1 : 1
         );
-        console.log('Price-->',price)
+        console.log("Price-->", price);
         state.filteredProducts = price;
         let count = price.length;
         if (count > 1) {
@@ -96,8 +96,8 @@ export const productSlice = createSlice({
           state.error = noError;
           if (!noError) {
             state.filteredProducts = price;
-        //     const saveState = JSON.stringify(price);
-        //     sessionStorage.setItem("filteredItem", saveState);
+            //     const saveState = JSON.stringify(price);
+            //     sessionStorage.setItem("filteredItem", saveState);
           } else {
             state.error = true;
             state.filteredProducts = [];
@@ -114,7 +114,7 @@ export const productSlice = createSlice({
         );
         state.error = false;
         state.filteredProducts = color;
-        console.log("color-->",color)
+        console.log("color-->", color);
         if (color.length > 0) {
           state.error = false;
           // const saveState = JSON.stringify(color);
@@ -130,11 +130,11 @@ export const productSlice = createSlice({
     filterBySize(state, action) {
       try {
         const size = state.filteredProducts.filter((product) =>
-          product.size.includes(action.payload)
+        product.size.includes(action.payload)
         );
         state.error = false;
         state.filteredProducts = size;
-        console.log("size-->",size)
+        console.log("size-->", size);
         if (size.length > 0) {
           state.error = false;
           // const saveState = JSON.stringify(size);
@@ -142,6 +142,7 @@ export const productSlice = createSlice({
         } else {
           state.error = true;
           state.filteredProducts = [];
+          // state.filteredProducts = action.payload;
         }
       } catch (err) {
         console.log(err);

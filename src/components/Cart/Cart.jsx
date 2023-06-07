@@ -19,6 +19,7 @@ const Cart = ({ openModel, setOpen }) => {
       {cart.length ? (
         <Fragment>
           <Dialog
+            className="border-0 outline-0"
             open={openModel}
             handler={() => setOpen(false)}
             animate={{
@@ -33,11 +34,11 @@ const Cart = ({ openModel, setOpen }) => {
             >
               {cart.map((item, index) => {
                 return (
-                  <div key={index}>
-                    <div className="grid grid-cols-2 py-4">
+                  <div key={index} className="w-[100%] mr-6 ">
+                    <div className="flex flex-row p-6 items-center justify-items-center justify-evenly">
                       <div>
                         <img
-                          className="h-[125px] rounded-md"
+                          className="h-[110px] w-[220px] rounded-md object-cover"
                           src={item.img}
                           alt={item.text}
                         ></img>
@@ -46,11 +47,11 @@ const Cart = ({ openModel, setOpen }) => {
                             {item.name}
                           </h4>
                         </div>
-                        <div className="max-w-xs">
+                        {/* <div className="max-w-xs">
                           <p className="text-black font-inter text-xs tracking-normal leading-none pt-2">
                             {item.text}
                           </p>
-                        </div>
+                        </div> */}
                       </div>
                       <div>
                         <p className="text-black font-inter text-xs tracking-normal leading-none pt-2">
@@ -76,29 +77,15 @@ const Cart = ({ openModel, setOpen }) => {
                           Total Item Price :
                           <span className="ml-2">{item.totalPrice}</span>
                         </p>
+                      </div>
                         <div className="pt-2">
                           <Tooltip
                             content="remove from the cart"
                             placement="bottom"
                           >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              strokeWidth="1.5"
-                              stroke="red"
-                              className="w-6 h-6"
-                              onClick={() => dispatch(removeFromCart(item))}
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M9.75 9.75l4.5 4.5m0-4.5l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                              />
-                            </svg>
+                            <Button size="sm" color="red" className="hover:bg-red-600 duration-500 ease-in-out" onClick={() => dispatch(removeFromCart(item))}>Remove</Button>
                           </Tooltip>
                         </div>
-                      </div>
                     </div>
                   </div>
                 );
