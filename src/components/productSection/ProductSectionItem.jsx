@@ -28,7 +28,7 @@ const ProductSectionItem = ({
     <div>
       <Card className="w-96 h-[620px] hover:scale-105 duration-300 ease-in-out cursor-pointer">
         <CardHeader floated={false} className="h-min object-cover">
-          <img src={img} alt={name} className="object-cover"/>
+          <img src={img} alt={name} className="object-cover h-72 w-[100%]"/>
         </CardHeader>
         <CardBody className="text-center">
           <Typography variant="h4" color="blue-gray" className="mb-2">
@@ -82,3 +82,4 @@ const ProductSectionItem = ({
 };
 
 export default ProductSectionItem;
+

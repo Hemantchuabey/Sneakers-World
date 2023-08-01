@@ -15,7 +15,7 @@ export const authSlice = createSlice({
       const userId = action.payload;
       const userValidation = /^[A-Za-z]{4,10}$/i.test(userId.name);
       const passwordValidation =
-        /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{4,10}$/i.test(
+        /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).{8,}$/i.test(
           userId.password
         );
       state.user = userId;

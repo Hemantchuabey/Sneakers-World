@@ -6,7 +6,6 @@ import {
     CardFooter,
     Typography,
     Input,
-    Checkbox,
     Button,
   } from "@material-tailwind/react";
 import { login } from '../../features/Slices/authSlice';
@@ -26,18 +25,18 @@ const Login = () => {
       // const { name, value } = e.target;
       // console.log("onloginhandler..",e.target)
       setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
-      console.log("valuevalue",loginValue)
+      // console.log("valuevalue",loginValue)
     };
 
   return (
     <div className="grid grid-cols-1 items-center justify-items-center h-screen">
-      <Card className="w-96">
+      <Card className="w-80 md:w-96">
         <CardHeader
           variant="gradient"
           color="blue"
-          className="mb-4 grid h-28 place-items-center"
+          className="mb-4 grid h-20 md:h-28 place-items-center"
         >
-          <Typography variant="h3" color="white">
+          <Typography className="text-xl md:text-2xl font-bold" color="white">
             Sign In
           </Typography>
         </CardHeader>
