@@ -8,23 +8,23 @@ const Navbar = () => {
   const [open,setOpen] = useState(false)
   const totalAmount = useSelector(state => state.cart.totalAmount)
   const user = useSelector((state) => state.login)
-  const {name,image} = user
+  const {image} = user
   const dispatch = useDispatch()
   const handleOpen = () => {
     setOpen(true)
   }
-  console.log("name inside navbar" , user)
+  // console.log("name inside navbar" , user)
   return (
     <>
       <div className="bg-black p-4 w-full flex justify-around items-center">
         <div>
-          <img src={logo} alt="Store" className="w-34 h-10 " />
+          <img src={logo} alt="Store" className="w-20 h-6  md:w-40 md:h-10 " />
         </div>
         {/* <h3 className='text-white font-inter text-2xl font-bold tracking-normal leading-none text-center'>
                 Welcome to Sneaker-World
             </h3> */}
-        <div className="flex flex-row items-center ml-8">
-          <button className="text-white font-inter text-base font-medium tracking-normal leading-none text-center mr-6" onClick={() => dispatch(logout(user.user))}> 
+        <div className="flex flex-row items-center ml-8 text-[12px] md:text-xl">
+          <button className="text-white font-inter font-medium tracking-normal leading-none text-center mr-6" onClick={() => dispatch(logout(user.user))}> 
             Logout
           </button>
           <div className="flex flex-row items-center ">
@@ -34,7 +34,7 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               strokeWidth="2"
               stroke="currentColor"
-              className="w-6 h-6 text-white mr-1"
+              className="w-4 h-4 md:w-6 md:h-6 text-white mr-1"
             >
               <path
                 strokeLinecap="round"
@@ -54,7 +54,7 @@ const Navbar = () => {
               viewBox="0 0 24 24"
               strokeWidth="2"
               stroke="currentColor"
-              className="w-6 h-6 text-white mr-1"
+              className="w-4 h-4 md:w-6 md:h-6 text-white mr-1"
             >
               <path
                 strokeLinecap="round"
@@ -83,7 +83,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="bg-black text-white p-4 w-full justify-around flex flex-row items-center mt-1">
+      <div className="bg-black text-white p-4 w-full justify-around flex flex-row items-center mt-1 text-[12px] md:text-xl">
         <div className="text-white font-inter font-medium tracking-normal leading-none transition-all ease-in-out delay-150 hover:scale-110 hover:text-gray-200 cursor-pointer">
           50% OFF
         </div>

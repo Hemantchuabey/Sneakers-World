@@ -14,7 +14,7 @@ function App() {
   const user = useSelector((state) => state.login.user);
   const { authUser } = user;
   // console.log("authUser", authUser);
-  console.log("User", user);
+  // console.log("User", user);
   // console.log("cart", cart);
   // console.log("totalAmount", totalAmount);
   // console.log("totalPrice", totalPrice);
