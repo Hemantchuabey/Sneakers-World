@@ -16,31 +16,32 @@ const SingleProduct = () => {
   // console.log("size", size);
   // console.log("color", colors);
   return (
-    <div className="justify-center my-12">
+    <div className="w-[80%] m-auto ">
       {products
         .filter((product) => product.id === id)
         .map((item, index) => {
           return (
-            <div key={index} className="flex justify-center py-10">
-              <div className="pl-32 grow-[1]">
+            <div key={index} className="flex flex-col md:flex-row gap-4 md:gap-8 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] ">
+                  
+              <div className="m-auto grow-[1] w-[80vw] md:w-[80vw]">
                 <img
-                  className="h-[450px] w-[780px] object-cover rounded-lg "
+                  className="h-64 md:h-[28rem] w-[90%] object-cover rounded-lg "
                   src={item.img}
                   alt={item.name}
                 ></img>
               </div>
-              <div className="grow-[2]">
+              <div className="grow-[4]">
                 <div className="max-w-lg">
-                  <h5 className="text-2xl font-inter font-bold tracking-normal leading-none pb-8">
+                  <h5 className="text-2xl md:text-3xl font-inter font-bold tracking-normal leading-none pb-2 ">
                     {item.name}
                   </h5>
-                  <p className="text-blue-400 text-md font-inter font-bold tracking-normal leading-none pb-8">
+                  <p className="text-red-400 text-sm md:text-lg font-inter font-bold tracking-normal leading-none pb-4">
                     15% off
                   </p>
-                  <p className="text-gray-600 text-xl font-inter font-bold tracking-normal leading-none pb-8">
+                  <p className="text-blue-600 text-[15px] md:text-lg font-inter font-bold tracking-normal leading-none pb-4 md:pb-6">
                     {item.text}
                   </p>
-                  <div className="pb-8">
+                  <div className="pb-4 flex flex-col gap-4">
                     <div>
                       <label
                         htmlFor="size"
@@ -90,9 +91,9 @@ const SingleProduct = () => {
                       </div>
                       <Tooltip content="Add to cart" placement="bottom">
                         <Button
-                          color="gray"
+                          className="bg-gray-300 text-black w-[100%] hover:bg-gray-800 hover:text-white hover:scale-105 transition duration-400 ease-in-out"
                           size="lg"
-                          variant="outlined"
+                          
                           ripple={true}
                           onClick={() => dispatch(addToCart({
                             id : item.id,

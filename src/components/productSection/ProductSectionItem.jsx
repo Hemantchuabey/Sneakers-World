@@ -28,7 +28,7 @@ const ProductSectionItem = ({
     <div>
       <Card className="w-[100%] mx-auto h-min hover:scale-105 duration-300 ease-in-out cursor-pointer">
         <CardHeader floated={false} className="h-min object-cover">
-          <img src={img} alt={name} className="object-cover h-48 md:h-72 w-[100%]"/>
+          <img src={img} alt={name} className="object-cover h-56 md:h-72 w-[100%]"/>
         </CardHeader>
         <CardBody className="text-center pt-4 pl-4 pr-4 pb-0">
           <Typography variant="h4" color="blue-gray" className="mb-2">
