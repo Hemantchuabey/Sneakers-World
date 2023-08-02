@@ -13,6 +13,7 @@ const SingleProduct = () => {
   const dispatch = useDispatch()
   const [size, setSize] = useState(productSize[0]);
   const [colors, setColor] = useState(productColor[0]);
+  let randomDiscount = Math.floor(Math.random() * 30)
   // console.log("size", size);
   // console.log("color", colors);
   return (
@@ -36,7 +37,7 @@ const SingleProduct = () => {
                     {item.name}
                   </h5>
                   <p className="text-red-400 text-sm md:text-lg font-inter font-bold tracking-normal leading-none pb-4">
-                    15% off
+                    {randomDiscount}% off
                   </p>
                   <p className="text-blue-600 text-[15px] md:text-lg font-inter font-bold tracking-normal leading-none pb-4 md:pb-6">
                     {item.text}

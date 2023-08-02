@@ -10,6 +10,7 @@ import {
 } from "@material-tailwind/react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/Slices/cartSlice";
+import { Link, useParams } from "react-router-dom";
 
 const ProductSectionItem = ({
   id,
@@ -24,8 +25,10 @@ const ProductSectionItem = ({
   const dispatch = useDispatch();
   const defaultSize = size[Math.floor(Math.random() * size.length)];
   const defaultColor = color[Math.floor((Math.random() * size.length))];
+  const { type } = useParams();
   return (
     <div>
+      <Link to={`/filteredProduct/${type}/` + id}>
       <Card className="w-[100%] mx-auto h-min hover:scale-105 duration-300 ease-in-out cursor-pointer">
         <CardHeader floated={false} className="h-min object-cover">
           <img src={img} alt={name} className="object-cover h-56 md:h-72 w-[100%]"/>
@@ -77,6 +80,7 @@ const ProductSectionItem = ({
           </Tooltip>
         </CardFooter>
       </Card>
+      </Link>
     </div>
   );
 };
