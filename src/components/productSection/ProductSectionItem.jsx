@@ -22,11 +22,11 @@ const ProductSectionItem = ({
   totalPrice,
 }) => {
   const dispatch = useDispatch();
-  const defaultSize = size[0];
+  const defaultSize = size[Math.floor(Math.random() * size.length)];
   const defaultColor = color[0];
   return (
     <div>
-      <Card className="w-96 h-[620px] hover:scale-105 duration-300 ease-in-out cursor-pointer">
+      <Card className="w-[100%] mx-auto min-h-min hover:scale-105 duration-300 ease-in-out cursor-pointer">
         <CardHeader floated={false} className="h-min object-cover">
           <img src={img} alt={name} className="object-cover h-72 w-[100%]"/>
         </CardHeader>

@@ -24,7 +24,7 @@ const Navbar = () => {
                 Welcome to Sneaker-World
             </h3> */}
         <div className="flex flex-row items-center ml-8 text-[12px] md:text-xl">
-          <button className="text-white font-inter font-medium tracking-normal leading-none text-center mr-6" onClick={() => dispatch(logout(user.user))}> 
+          <button className="text-white font-inter font-medium tracking-normal leading-none text-center mr-6 hover:scale-105 duration-300 ease-in-out" onClick={() => dispatch(logout(user.user))}> 
             Logout
           </button>
           <div className="flex flex-row items-center ">
@@ -42,7 +42,7 @@ const Navbar = () => {
                 d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
               />
             </svg>
-            <p className="text-white font-inter font-medium tracking-normal leading-none">
+            <p className="text-white font-inter font-medium tracking-normal leading-none hover:scale-105 duration-300 ease-in-out">
               WishList
             </p>
           </div>
@@ -64,7 +64,7 @@ const Navbar = () => {
             </svg>
             )}
             
-            <p className="text-white font-inter font-medium tracking-normal leading-none">
+            <p className="text-white font-inter font-medium tracking-normal leading-none hover:scale-105 duration-300 ease-in-out">
               ShoppingCart
             </p>
             <div>

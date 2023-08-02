@@ -31,7 +31,7 @@ export const sliderData = [
   },
   {
     id: "1",
-    img: imgSlider2,
+    img: nike2,
     text: "AUTUMN is coming, choose what suits you THE BEST",
   },
   {
@@ -50,7 +50,7 @@ export const storeData = [
   {
     id: "1",
     img: nike1,
-    name: "Nike Shoes 1",
+    name: "Nike AirForce 1",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Nike",
     size: ["40", "42", "46"],
@@ -61,7 +61,7 @@ export const storeData = [
   {
     id: "2",
     img: nike2,
-    name: "Nike Shoes 2",
+    name: "Nike Dunk Low",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Nike",
     size: ["40", "42", "44", "46"],
@@ -72,7 +72,7 @@ export const storeData = [
   {
     id: "3",
     img: nike3,
-    name: "Nike Shoes 3",
+    name: "Nike Cortez",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Nike",
     size: ["40", "42", "44", "48"],
@@ -83,7 +83,7 @@ export const storeData = [
   {
     id: "4",
     img: nike4,
-    name: "Nike Shoes 4",
+    name: "Nike Metcon",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Nike",
     size: ["40", "46"],
@@ -94,7 +94,7 @@ export const storeData = [
   {
     id: "5",
     img: adidas1,
-    name: "adidas Shoes 1",
+    name: "Adidas Nmd",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Adidas",
     size: ["40", "44", "46", "48"],
@@ -105,7 +105,7 @@ export const storeData = [
   {
     id: "6",
     img: adidas2,
-    name: "adidas Shoes 2",
+    name: "Adidas Ultraboost",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Adidas",
     size: ["44", "46", "48"],
@@ -116,7 +116,7 @@ export const storeData = [
   {
     id: "7",
     img: adidas3,
-    name: "adidas Shoes 3",
+    name: "Adidas Adilette",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Adidas",
     size: ["40", "42", "44", "46", "48"],
@@ -127,7 +127,7 @@ export const storeData = [
   {
     id: "8",
     img: adidas4,
-    name: "adidas Shoes 4",
+    name: "Adidas Duramo",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Adidas",
     size: ["40", "42", "44", "46"],
@@ -138,7 +138,7 @@ export const storeData = [
   {
     id: "9",
     img: puma1,
-    name: "puma Shoes 1",
+    name: "Puma Carina",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Puma",
     size: ["40", "42", "44", "46"],
@@ -149,7 +149,7 @@ export const storeData = [
   {
     id: "10",
     img: puma2,
-    name: "puma Shoes 2",
+    name: "Puma Nitro",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Puma",
     size: ["40", "44", "46"],
@@ -160,7 +160,7 @@ export const storeData = [
   {
     id: "11",
     img: puma3,
-    name: "puma Shoes 3",
+    name: "Puma Clyde",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Puma",
     size: ["40", "42", "44", "46"],
@@ -171,7 +171,7 @@ export const storeData = [
   {
     id: "12",
     img: puma4,
-    name: "puma Shoes 4",
+    name: "puma Suede",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Puma",
     size: ["40", "42", "44", "46"],
@@ -182,7 +182,7 @@ export const storeData = [
   {
     id: "13",
     img: reebok1,
-    name: "reebok Shoes 1",
+    name: "Reebok DMX",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Reebok",
     size: ["40", "42", "44", "46"],
@@ -193,7 +193,7 @@ export const storeData = [
   {
     id: "14",
     img: reebok2,
-    name: "reebok Shoes 2",
+    name: "Reebok Answer",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Reebok",
     size: ["40", "42", "44", "48"],
@@ -204,7 +204,7 @@ export const storeData = [
   {
     id: "15",
     img: reebok3,
-    name: "reebok Shoes 3",
+    name: "Reebok Freestyle",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Reebok",
     size: ["40", "44", "46"],
@@ -215,7 +215,7 @@ export const storeData = [
   {
     id: "16",
     img: reebok4,
-    name: "reebok Shoes 4",
+    name: "Reebok Zigwild",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Reebok",
     size: ["40", "42", "44", "46"],
@@ -226,7 +226,7 @@ export const storeData = [
   {
     id: "17",
     img: jordan1,
-    name: "jordan Shoes 1",
+    name: "Air Jordan 1",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Jordan",
     size: ["40", "42", "44", "46", "48"],
@@ -237,7 +237,7 @@ export const storeData = [
   {
     id: "18",
     img: jordan2,
-    name: "jordan Shoes 2",
+    name: "Jordan Max Aura",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Jordan",
     size: ["40", "46"],
@@ -248,7 +248,7 @@ export const storeData = [
   {
     id: "19",
     img: jordan3,
-    name: "jordan Shoes 3",
+    name: "Air Jordan 1 Zoom",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Jordan",
     size: ["42", "44", "46"],
@@ -259,7 +259,7 @@ export const storeData = [
   {
     id: "20",
     img: jordan4,
-    name: "jordan Shoes 4",
+    name: "Jordan One Take",
     text: "Fashion never stops. There is always the new project, the new opportunity. The important thing is to take your time and not get stressed. I just want to do what I do.",
     type: "Jordan",
     size: ["40", "42", "44"],

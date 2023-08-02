@@ -44,8 +44,8 @@ const Slider = () => {
                   />
                 )}
               </div>
-              <div className="absolute top-44 mx-auto inset-x/4">
-                <p className="text-gray-700 text-3xl  font-inter font-bold">
+              <div className="absolute top-44 mx-auto inset-x-4">
+                <p className="text-gray-700 mt-4 text-[20px] md:text-3xl  font-inter font-bold">
                   {parseInt(slide.id) === slideIndex && slide.text}
                 </p>
               </div>
@@ -60,8 +60,8 @@ const Slider = () => {
               <div
                 className={
                   index === slideIndex
-                    ? "bg-gray-700 rounded-full p-4 cursor-pointer"
-                    : "bg-gray-300 rounded-full p-4 cursor-pointer"
+                    ? "bg-gray-700 rounded-full  p-2 md:p-4 cursor-pointer"
+                    : "bg-gray-300 rounded-full p-2 md:p-4 cursor-pointer"
                 }
                 onClick={() => dispatch(dotSlide(index))}
               ></div>
@@ -70,7 +70,7 @@ const Slider = () => {
         })}
       </div>
       <button
-        className="absolute top-[50%] right-4 rounded-full bg-white p-2 hover:scale-110 hover:bg-gray-500 transition-all ease-in-out duration-500"
+        className="absolute top-[50%] right-4 rounded-full bg-white p-1 md:p-2 hover:scale-110 hover:bg-gray-500 transition-all ease-in-out duration-500"
         onClick={() => dispatch(nextSlide(slideIndex + 1))}
       >
         <svg
@@ -79,7 +79,7 @@ const Slider = () => {
           viewBox="0 0 24 24"
           strokeWidth="2"
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-4 h-4 md:w-6 md:h-6"
         >
           <path
             strokeLinecap="round"
@@ -89,7 +89,7 @@ const Slider = () => {
         </svg>
       </button>
       <button
-        className="absolute top-[50%] left-4 rounded-full bg-white p-2 hover:scale-110 hover:bg-gray-500 transition-all ease-in-out duration-500"
+        className="absolute top-[50%] left-4 rounded-full bg-white  p-1 md:p-2 hover:scale-110 hover:bg-gray-500 transition-all ease-in-out duration-500"
         onClick={() => dispatch(prevSlide(slideIndex - 1))}
       >
         <svg
@@ -98,7 +98,7 @@ const Slider = () => {
           viewBox="0 0 24 24"
           strokeWidth="2"
           stroke="currentColor"
-          className="w-6 h-6"
+          className="w-4 h-4 md:w-6 md:h-6"
         >
           <path
             strokeLinecap="round"
