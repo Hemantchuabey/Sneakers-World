@@ -27,33 +27,33 @@ const ProductCard = ({ id, name, text, img, price, colors }) => {
           floated={false}
           shadow={false}
           color="transparent"
-          className="m-0 rounded-none h-48 "
+          className="m-0 rounded-none h-fit "
         >
-          <img src={img} alt={name} className="h-full w-full object-contain" />
+          <img src={img} alt={name} className="object-cover h-48 md:h-72 w-[100%]" />
         </CardHeader>
-        <CardBody>
-          <Typography variant="h5" color="blue-gray" className="font-bold">
+        <CardBody className="text-center pt-4 pl-4 pr-4 pb-0">
+          <Typography variant="h4" color="blue-gray" className="font-bold">
             {name}
           </Typography>
           <Typography
             variant=""
-            color="gray"
-            className="mt-3 font-normal font-immer"
+            color="blue"
+            className="mt-3 font-medium font-immer" textGradient
           >
             {text}
           </Typography>
         </CardBody>
-        <CardFooter divider className="flex items-center justify-between">
-          <div className="grid grid-cols-2 items-center -space-x-3 gap-4">
-            <Typography className="font-immer font-bold">{price}Rs.</Typography>
+        <CardFooter divider className="items-center justify-between">
+          <div className="flex justify-items-center justify-between items-center -space-x-3 gap-4">
+            <Typography className="font-immer font-bold">{price} Rs.</Typography>
             <Typography className="font-normal ml-4">
               {colors.map((color, index) => {
                 return (
-                  <i
-                    className="mt-[3px] p-2 mr-6 h-4 w-4 rounded-full cursor-pointer"
+                  <span
+                    className="px-2 rounded-full mx-2 cursor-pointer"
                     key={index}
                     style={{ backgroundColor: color }}
-                  ></i>
+                  ></span>
                 );
               })}
             </Typography>

@@ -12,7 +12,6 @@ import ProductCard from "./productCard";
 import Error from "../Error/Error";
 import {
   filteredProducts,
-  singleProduct,
   filterGender,
   sortByHighPrice,
   sortByLowPrice,
@@ -39,23 +38,22 @@ const FilteredProducts = () => {
   const sizeButton = ["40", "42", "44", "46", "48"];
   // console.log("params",params)
   return (
-    <div>
+    <div className="w-[80%] mx-auto">
       <div className="pt-16">
-        <div className="pl-14">
+        <div className="">
        <Link to="/"> 
           <h1 className="text-4xl font-inner text-gray-600 tracking-normal leading-none">
             {type}
           </h1></Link>
           <div className="flex items-center justify-between py-8">
-            <div className="flex items-center ">
+            <div className="grid grid-cols-2 md:grid md:grid-cols-3 lg:flex items-center ">
               {genderButton.map((item, index) => (
                 <div key={index}>
                   <Button
                     color="gray"
-                    size="lg"
                     variant="outlined"
                     ripple={true}
-                    className="text-black m-2 hover:bg-gray-400 duration-300 ease-in-out "
+                    className="text-black m-2 text-xs md:text-sm hover:bg-gray-400 duration-300 ease-in-out "
                     onClick={() => dispatch(filterGender(item))}
                   >
                     {item}
@@ -64,20 +62,20 @@ const FilteredProducts = () => {
               ))}
               <Button
                 color="gray"
-                size="lg"
+            
                 variant="outlined"
                 ripple={true}
-                className="text-black m-2 hover:bg-gray-400 duration-300 ease-in-out "
+                className="text-black m-2 text-xs md:text-sm font-bold hover:bg-gray-400 duration-300 ease-in-out "
                 onClick={() => dispatch(sortByHighPrice())}
               >
                 High Price
               </Button>
               <Button
                 color="gray"
-                size="lg"
+            
                 variant="outlined"
                 ripple={true}
-                className="text-black m-2 hover:bg-gray-400 duration-300 ease-in-out "
+                className="text-black m-2 md:text-sm hover:bg-gray-400 duration-300 ease-in-out "
                 onClick={() => dispatch(sortByLowPrice())}
               >
                 Low Price
@@ -86,10 +84,10 @@ const FilteredProducts = () => {
                 <MenuHandler>
                   <Button
                     color="gray"
-                    size="lg"
+                
                     variant="outlined"
                     ripple={true}
-                    className="text-black m-2 hover:bg-gray-400 duration-300 ease-in-out "
+                    className="text-black m-2 md:text-sm hover:bg-gray-400 duration-300 ease-in-out "
                     
                   >
                     Select Color
@@ -108,10 +106,10 @@ const FilteredProducts = () => {
                 <MenuHandler>
                   <Button
                     color="gray"
-                    size="lg"
+                
                     variant="outlined"
                     ripple={true}
-                    className="text-black m-2 hover:bg-gray-400 duration-300 ease-in-out "
+                    className="text-black m-2 md:text-sm hover:bg-gray-400 duration-300 ease-in-out "
                   >
                     Select Size
                   </Button>
@@ -126,10 +124,10 @@ const FilteredProducts = () => {
             <div className="float-right">
               <Button
                 color="gray"
-                size="lg"
+            
                 variant="outlined"
                 ripple={true}
-                className="text-black m-2 hover:bg-gray-400 duration-300 ease-in-out "
+                className="text-black m-2 md:text-sm hover:bg-gray-400 duration-300 ease-in-out "
                 onClick={() => dispatch(filteredProducts(type))}
               >
                 Clear Filter
@@ -140,7 +138,7 @@ const FilteredProducts = () => {
         {error ? (
           <Error></Error>
         ) : (
-          <div className="grid grid-cols-4 justify-items-center py-8 gap-12">
+          <div className="w-[100%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-center justify-items-center py-4 gap-4 h-min mx-auto">
             {products
               .filter((product) => product.type === type)
               .map((product, index) => {
