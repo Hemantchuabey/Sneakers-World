@@ -56,7 +56,9 @@ const Login = () => {
             name="password"
             value={loginValue.password}
             onChange={onLoginHandler}
+            color="red"
           />
+          <div className='text-red-600 text-xs mt-0 w-[80%] self-center text-center'>Enter Combination of Small Letter, Capital Letter, Number and special char.</div>
           <Input
             label="Image URL address"
             size="lg"
@@ -65,7 +67,7 @@ const Login = () => {
             value={loginValue.image}
             onChange={onLoginHandler}
           />
-          <div className="-ml-2.5"></div>
+         
         </CardBody>
         <CardFooter className="pt-0">
           <Button
