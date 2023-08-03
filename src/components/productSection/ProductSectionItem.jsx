@@ -28,7 +28,7 @@ const ProductSectionItem = ({
   const { type } = useParams();
   return (
     <div>
-      <Link to={`/filteredProduct/${type}/` + id}>
+      <Link to={`/filteredProduct/${name.split(" ")[0]}/` + id}>
       <Card className="w-[100%] mx-auto h-min hover:scale-105 duration-300 ease-in-out cursor-pointer">
         <CardHeader floated={false} className="h-min object-cover">
           <img src={img} alt={name} className="object-cover h-56 md:h-72 w-[100%]"/>

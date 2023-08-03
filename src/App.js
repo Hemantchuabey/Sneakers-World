@@ -5,6 +5,7 @@ import Main from "./components/Main/Main";
 import FilteredProducts from "./components/filteredProducts/FilteredProducts";
 import SingleProduct from "./components/filteredProducts/singleProduct";
 import Login from "./components/Login/Login";
+import Cart from "./components/Cart/Cart";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -20,19 +21,18 @@ function App() {
   // console.log("totalPrice", totalPrice);
   return (
     <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={authUser ? <Main /> : <Login />}></Route>
-          <Route
-            path="/filteredProduct/:type"
-            element={<FilteredProducts />}
-          ></Route>
-          <Route
-            path="/filteredProduct/:type/:id"
-            element={<SingleProduct />}
-          ></Route>
-        </Routes>
-      </BrowserRouter>
+      <Routes>
+        <Route path="/" element={authUser ? <Main /> : <Login />}></Route>
+        <Route
+          path="/filteredProduct/:type"
+          element={<FilteredProducts />}
+        ></Route>
+        <Route
+          path="/filteredProduct/:type/:id"
+          element={<SingleProduct />}
+        ></Route>
+        <Route path="/cart" element={<Cart />}></Route>
+      </Routes>
     </div>
   );
 }
