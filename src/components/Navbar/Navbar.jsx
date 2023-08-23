@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo from "../../assets/image/logo.png";
 import Cart from "../Cart/Cart";
 import { useDispatch, useSelector } from "react-redux";
-import { Avatar,Tooltip,Button } from "@material-tailwind/react";
+import { Avatar,Tooltip } from "@material-tailwind/react";
 import {logout} from '../../features/Slices/authSlice'
 const Navbar = () => {
   const [open,setOpen] = useState(false)

@@ -1,32 +1,87 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from "react";
 import {
-    Card,
-    CardHeader,
-    CardBody,
-    CardFooter,
-    Typography,
-    Input,
-    Button,
-  } from "@material-tailwind/react";
-import { login } from '../../features/Slices/authSlice';
-import { useDispatch } from 'react-redux';
-
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Input,
+  Button,
+} from "@material-tailwind/react";
+import "./login.css";
+import "./utils";
+import { login } from "../../features/Slices/authSlice";
+import { useDispatch } from "react-redux";
+import {
+  hasLowercase,
+  hasNumber,
+  hasSpecialCharacter,
+  hasUppercase,
+} from "./utils";
+import CharacterCondition from "./characterCondition";
 const Login = () => {
   const intitalState = {
     name: "",
     password: "",
-    image: "",
   };
 
-  const dispatch = useDispatch()
-    const [loginValue,setLoginValue] = useState(intitalState)
-    // Login Handler
-    const onLoginHandler = (e) => {
-      // const { name, value } = e.target;
-      // console.log("onloginhandler..",e.target)
-      setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
-      // console.log("valuevalue",loginValue)
+  const dispatch = useDispatch();
+  const [loginValue, setLoginValue] = useState(intitalState);
+  const [warningString,setWarningString] = useState("Enter Combination of Small Letter, Capital Letter, Number and special character")
+  // Login Handler
+  const onLoginHandler = (e) => {
+    // const { name, value } = e.target;
+    // console.log("onloginhandler..",e.target)
+    setLoginValue({ ...loginValue, [e.target.name]: e.target.value });
+    // console.log("valuevalue",loginValue)
+  };
+
+  const [strength, setStrength] = useState(0);
+  const [progressBarStyles, setProgressBarStyles] = useState({
+    width: "0%",
+    backgroundColor: "transparent",
+  });
+
+  useEffect(() => {
+    const updatedProgressBarStyle = {
+      backgroundColor: "red",
     };
+    let totalStrength = 0;
+    if (loginValue.password.length > 3) {
+      const strengthByLength = Math.min(
+        6,
+        Math.floor(loginValue.password.length / 3)
+      );
+      let strengthByCharachaterType = 0;
+      if (hasNumber.test(loginValue.password)) {
+        strengthByCharachaterType += 1;
+        setWarningString("Enter Combination of Small Letter, Capital Letter, and special character")
+      }
+      if (hasUppercase.test(loginValue.password)) {
+        strengthByCharachaterType += 1;
+        setWarningString("Enter Combination of Small Letter, Capital Letter, and special character")
+      }
+      if (hasLowercase.test(loginValue.password)) {
+        strengthByCharachaterType += 1;
+      }
+      if (hasSpecialCharacter.test(loginValue.password)) {
+        strengthByCharachaterType += 1;
+      }
+      totalStrength = strengthByLength + strengthByCharachaterType;
+    } else {
+      totalStrength = 0;
+    }
+
+    updatedProgressBarStyle.width = `${totalStrength * 10}%`;
+    if (totalStrength >= 8) {
+      updatedProgressBarStyle.backgroundColor = "green";
+    } else if (totalStrength >= 6) {
+      updatedProgressBarStyle.backgroundColor = "orange";
+    }
+
+    setStrength(totalStrength);
+    setProgressBarStyles(updatedProgressBarStyle);
+  }, [loginValue.password]);
 
   return (
     <div className="grid grid-cols-1 items-center justify-items-center h-screen">
@@ -49,6 +104,7 @@ const Login = () => {
             value={loginValue.name}
             onChange={onLoginHandler}
           />
+
           <Input
             label="Password"
             size="lg"
@@ -56,18 +112,20 @@ const Login = () => {
             name="password"
             value={loginValue.password}
             onChange={onLoginHandler}
-            color="red"
           />
-          <div className='text-red-600 text-xs mt-0 w-[80%] self-center text-center'>Enter Combination of Small Letter, Capital Letter, Number and special char.</div>
-          <Input
-            label="Image URL address"
-            size="lg"
-            type="text"
-            name="image"
-            value={loginValue.image}
-            onChange={onLoginHandler}
-          />
+          {/* for progress bar */}
+          <div className="progress-container">
+            <div
+              className="progress-bar"
+              style={{ ...progressBarStyles }}
+            ></div>
+            {/* <p>strength of your password {strength}</p> */}
          
+          </div>
+          {/* Progress bar ends */}
+          <div className="text-red-600 text-xs mt-0 w-[80%] self-center text-center">
+            <CharacterCondition totalStrength = {strength} password = {loginValue.password}/>
+          </div>
         </CardBody>
         <CardFooter className="pt-0">
           <Button
@@ -77,13 +135,10 @@ const Login = () => {
           >
             Sign In
           </Button>
-          <Typography variant="small" className="mt-6 flex justify-center">
-            Image is Optional
-          </Typography>
         </CardFooter>
       </Card>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default React.memo(Login);
