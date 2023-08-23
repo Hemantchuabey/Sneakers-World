@@ -1,46 +1,47 @@
-# Getting Started with Create React App and Redux
+# Sneaker World
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
-## Available Scripts
+## Stack Used
+### HTML, CSS, Javascript, React, Redux, Tailwind, Material Tailwind 
 
-In the project directory, you can run:
+## Watch Live : (https://sneakers-world-hemantchuabey.vercel.app)
 
-### `npm start`
+Login page -> User can log in according to the given instruction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![image](https://github.com/Hemantchuabey/Sneakers-World/assets/65041427/e0b7101e-e25c-4e94-ba71-9bd37429281c)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Home page 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![image](https://github.com/Hemantchuabey/Sneakers-World/assets/65041427/4032e42a-6408-4a53-b258-08bc8182a0d9)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Featured Product -> Users can see all the featured and discounted products directly on the home page.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![image](https://github.com/Hemantchuabey/Sneakers-World/assets/65041427/3ecf7238-6f3e-41d3-9f03-81e7d4b958ce)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Product Section: The user can select any of the brands from given  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+![image](https://github.com/Hemantchuabey/Sneakers-World/assets/65041427/d766fca6-4eff-4905-aced-3a0bed29b389)
+
+
+
+Selecting any one of the product users will be redirected to detailed information about the single product,
+
+
+![image](https://github.com/Hemantchuabey/Sneakers-World/assets/65041427/3a28bb0b-44e6-4991-b78d-eeaeb87795a5)
+
+
+
+We have a Cart section which is a pop-up model where we can see all the products along with the total amount of a single product and the total sum amount to be paid by the user
+
+
+![image](https://github.com/Hemantchuabey/Sneakers-World/assets/65041427/cd14ef05-1f97-408b-b78b-625e3a6e7cce)
